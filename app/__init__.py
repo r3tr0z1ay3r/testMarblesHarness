@@ -1,0 +1,3 @@
+"""FastAPI In-Memory CRUD Server Application."""
+
+__version__ = "1.0.0"
