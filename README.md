@@ -59,15 +59,21 @@ pip install -r requirements.txt
 
 ### 2. Run the Server
 
-You can run the server using either method:
+**Option A: Using the start script (Recommended)**
+```bash
+./start.sh
+# or
+bash start.sh
+```
 
-**Option A: Direct python runner**
+**Option B: Direct python runner**
 ```bash
 python main.py
 ```
 
-**Option B: Using Uvicorn CLI**
+**Option C: Using Uvicorn CLI (inside activated venv)**
 ```bash
+source .venv/bin/activate
 uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 
