@@ -74,14 +74,14 @@ python main.py
 **Option C: Using Uvicorn CLI (inside activated venv)**
 ```bash
 source .venv/bin/activate
-uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+uvicorn app.main:app --host 127.0.0.1 --port 8765 --reload
 ```
 
 Once running, access the server:
-- **API Overview & Status**: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-- **Interactive Swagger Docs**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-- **ReDoc Documentation**: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
-- **Health Check**: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
+- **API Overview & Status**: [http://127.0.0.1:8765/](http://127.0.0.1:8765/)
+- **Interactive Swagger Docs**: [http://127.0.0.1:8765/docs](http://127.0.0.1:8765/docs)
+- **ReDoc Documentation**: [http://127.0.0.1:8765/redoc](http://127.0.0.1:8765/redoc)
+- **Health Check**: [http://127.0.0.1:8765/health](http://127.0.0.1:8765/health)
 
 ---
 
@@ -89,7 +89,7 @@ Once running, access the server:
 
 ### 1. Create an Item (POST)
 ```bash
-curl -X POST http://127.0.0.1:8000/api/items/ \
+curl -X POST http://127.0.0.1:8765/api/items/ \
   -H "Content-Type: application/json" \
   -d '{
     "title": "Mechanical Keyboard",
@@ -103,26 +103,26 @@ curl -X POST http://127.0.0.1:8000/api/items/ \
 ### 2. List Items with Filtering & Pagination (GET)
 ```bash
 # List all items
-curl http://127.0.0.1:8000/api/items/
+curl http://127.0.0.1:8765/api/items/
 
 # Search and filter by stock
-curl "http://127.0.0.1:8000/api/items/?search=keyboard&in_stock=true"
+curl "http://127.0.0.1:8765/api/items/?search=keyboard&in_stock=true"
 
 # Paginate (skip first, limit 2)
-curl "http://127.0.0.1:8000/api/items/?skip=1&limit=2"
+curl "http://127.0.0.1:8765/api/items/?skip=1&limit=2"
 
 # Filter by tag
-curl "http://127.0.0.1:8000/api/items/?tag=office"
+curl "http://127.0.0.1:8765/api/items/?tag=office"
 ```
 
 ### 3. Get Item by ID (GET)
 ```bash
-curl http://127.0.0.1:8000/api/items/1
+curl http://127.0.0.1:8765/api/items/1
 ```
 
 ### 4. Full Update (PUT)
 ```bash
-curl -X PUT http://127.0.0.1:8000/api/items/1 \
+curl -X PUT http://127.0.0.1:8765/api/items/1 \
   -H "Content-Type: application/json" \
   -d '{
     "title": "Pro Mechanical Keyboard",
@@ -135,7 +135,7 @@ curl -X PUT http://127.0.0.1:8000/api/items/1 \
 
 ### 5. Partial Update (PATCH)
 ```bash
-curl -X PATCH http://127.0.0.1:8000/api/items/1 \
+curl -X PATCH http://127.0.0.1:8765/api/items/1 \
   -H "Content-Type: application/json" \
   -d '{
     "price": 99.99,
@@ -145,12 +145,12 @@ curl -X PATCH http://127.0.0.1:8000/api/items/1 \
 
 ### 6. Delete an Item (DELETE)
 ```bash
-curl -X DELETE http://127.0.0.1:8000/api/items/1 -i
+curl -X DELETE http://127.0.0.1:8765/api/items/1 -i
 ```
 
 ### 7. Reset In-Memory Database (POST)
 ```bash
-curl -X POST http://127.0.0.1:8000/api/items/actions/reset
+curl -X POST http://127.0.0.1:8765/api/items/actions/reset
 ```
 
 ---
