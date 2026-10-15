@@ -39,3 +39,6 @@ htmlcov/
 *.swp
 *.swo
 .DS_Store
+
+#Agent Docs
+AGENTS.md
