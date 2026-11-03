@@ -1,0 +1,14 @@
+# Development dependencies for the FastAPI In-Memory CRUD Server
+# These are used for linting, type checking, and test coverage.
+
+# Runtime dependencies (same as requirements.txt)
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+pydantic>=2.6.0
+pytest>=8.0.0
+httpx>=0.27.0
+
+# Development tools
+ruff>=0.3.0
+mypy>=1.9.0
+coverage>=7.5.0
